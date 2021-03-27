@@ -6,6 +6,7 @@ import Hoc from '../../hoc/Hoc'
 import Modal from './../../components/UI/Modal/Modal'
 import axios from './../../axios-order'
 import Spinner from './../../components/UI/Spinner/Spinner'
+import ErrorHandler from '../../hoc/ErrorHandle'
 
 const PRICES = {
   salad: 1,
@@ -147,4 +148,4 @@ class BurgerBuilder extends Component {
   }
 }
 
-export default BurgerBuilder
+export default ErrorHandler(BurgerBuilder, axios)
